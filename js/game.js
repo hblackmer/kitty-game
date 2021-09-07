@@ -12,6 +12,11 @@ function jump(){
     },300);
 }
 
+document.addEventListener("keydown", function (e) {
+    if (e.keyCode === 32 || e.keyCode === 38) {
+        jump();
+    }
+});
 
 var game = setInterval(function() {
     let kittyTop = parseInt(window.getComputedStyle(kitty).getPropertyValue("top"));
