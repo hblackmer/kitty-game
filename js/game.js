@@ -12,6 +12,7 @@ function jump(){
     },300);
 }
 
+
 var game = setInterval(function() {
     let kittyTop = parseInt(window.getComputedStyle(kitty).getPropertyValue("top"));
     let pepperLeft = parseInt(window.getComputedStyle(pepper).getPropertyValue("left"));
