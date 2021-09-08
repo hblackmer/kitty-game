@@ -72,6 +72,14 @@ body {
    100%{left: -10px}
 }
 
+/* start button */
+
+.start-btn {
+   background-color: #a16e83;
+   color: #dac1c0;
+   margin: 20px auto 0;
+}
+
 /* Footer */
  .footer_icons {
     margin: 20px 10px;
