@@ -14,7 +14,9 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nixie+One&family=Urbanist&family=Libre+Barcode+39+Text&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nixie+One&family=Urbanist&family=Libre+Barcode+39+Text&display=swap"
+        rel="stylesheet">
 
     <!-- Font-Awesome CSS -->
     <script src="https://kit.fontawesome.com/2e9b47aa85.js" crossorigin="anonymous"></script>
@@ -26,37 +28,41 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <!-- Game Header -->
-    <div class="container" id="about_header">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <div class="jumbotron text-center accent-color-1 mt-4">
-                    <h2>Kitty vs Peppers</h2>
-                    <p class="accent-color-2">Avoid the hot peppers by jumping!</p>
-                    <p class="accent-color-2"><u>JUMP CONTROLS</u><br>
-                        Mouse Input: Left Click<br>
-                        Keyboard Input: Spacebar or Up Arrow<br></p>
-                    <p class="accent-color-2">Start by tapping enter or clicking on start.</p>
-                    <p><a href="https://github.com/hblackmer/kitty-game" target="_blank"><i class="footer_icons accent-color-2 fab fa-github m-0"></i></a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="game">
-        <div class="row">
-            <p id="scoreboard" class="col-8 accent-color-2 mx-2">Score: <span class="accent-color-1" id="score"></span></p>
-            <p id="highestScore" class="col accent-color-2 mx-2">High Score: <span class="accent-color-1" id="highScore"></span></p>
-        </div>
-        <div id="kitty" class="d-flex align-self-end mx-2"><i class="fas fa-cat"></i></div>
-        <div id="pepper"><i class="fas fa-pepper-hot"></i></div>
-    </div>
-
     <div class="container">
         <div class="row">
-            <div class="col btn">
-                <button type="button" id="start" class="btn start-btn">Start</button>
+            <div class="col-md-4">
+                <div class="jumbotron text-center accent-color-1 mt-5">
+                    <h2>Kitty vs Peppers</h2>
+                    <p class="accent-color-2">Avoid the hot peppers by jumping!</p>
+                    <p class="accent-color-2 mt-1"><u>JUMP CONTROLS</u><br>
+                        Mouse Input: Left Click<br>
+                        Keyboard Input: Spacebar or Up Arrow<br></p>
+                    <div class="row">
+                        <div class="col btn">
+                            <button type="button" id="start" class="btn start-btn btn-lg">Start</button>
+                        </div>
+                    </div>
+                    <p><a href="https://github.com/hblackmer/kitty-game" target="_blank"><i
+                        class="github_icon accent-color-1 fab fa-github mt-3"></i></a></p>
+                </div>
             </div>
+            <div class="col-md-8">
+                <div class="game mt-5 mx-0">
+                    <div class="row">
+                        <p id="scoreboard" class="col-8 accent-color-2 mx-2">Score: <span class="accent-color-1"
+                                id="score"></span>
+                        </p>
+                        <p id="highestScore" class="col accent-color-2 mx-2">High Score: <span class="accent-color-1"
+                                id="highScore"></span></p>
+                    </div>
+                    <div id="kitty" class="d-flex align-self-end mx-2"><i class="fas fa-cat"></i></div>
+                    <div id="pepper"><i class="fas fa-pepper-hot"></i></div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -64,16 +70,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
         crossorigin="anonymous"></script>
-    
+
     <!-- Custom JavaScript -->
     <script src="js/game.js"></script>
 </body>
-<footer class="container">
-    <div class="row">
-        <div class="col d-inline-flex justify-content-center mt-3">
-            <!-- Website Link -->
-            <a href="http://heleneblackmer.com" target="_blank"><img class="footer_icons hb_logo" src="img/logo_circle.png"></a>
-        </div>
-    </div>
-</footer>
+
 </html>
