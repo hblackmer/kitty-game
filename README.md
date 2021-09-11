@@ -2,10 +2,8 @@
 <br />
 <p align="center">
   <a href="https://github.com/hblackmer/kitty-game">
-    <img src="img/logo_circle.png" alt="Logo" width="80" height="80">
+    <img src="img/logo.png" alt="Kitty vs Food Logo" width="200">
   </a>
-
-  <h3 align="center">Kitty vs Food</h3>
 </p>
 
 <!-- GETTING STARTED -->
