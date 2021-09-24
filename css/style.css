@@ -58,17 +58,37 @@ body {
 
 /* Pepper */
 #pepper{
-   color: red;
-   font-size: 1.5em;
    position: relative;
    top: 160px;
    left: 500px;
-   animation: pepper 1s infinite linear;
+   color: red;
+   font-size: 1.5em;
+}
+.pepper-animation {
+   left: 500px;
+   animation: pepper 0.85s infinite linear !important;
 }
 @keyframes pepper{
    0%{left: 570px}
    100%{left: -10px}
 }
+.pepper-animation-slow {
+   left: 500px;
+   animation: pepper-slow 1s infinite linear !important;
+}
+@keyframes pepper-slow{
+   0%{left: 570px}
+   100%{left: -10px}
+}
+.pepper-animation-fast{
+   left: 500px;
+   animation: pepper-fast 0.70s infinite linear !important;
+}
+@keyframes pepper-fast{
+   0%{left: 570px}
+   100%{left: -10px}
+}
+
 
 /* Start */
 .start-btn {
