@@ -2,6 +2,7 @@ const start = document.getElementById("start");
 const kitty = document.querySelector("#kitty");
 const pepper = document.querySelector("#pepper");
 const pepperAnimation = document.querySelector(".pepper-animation");
+let gameStart = 0;
 let counter = 0;
 let highScore = 0;
 let randomizeSpeed = 0;
@@ -22,7 +23,16 @@ function jump() {
     }
 }
 
-// Kitty jumps with UP or SPACEBAR keyboard input. Option to start game with ENTER keyboard input.
+// Start game with ENTER keyboard input or by clicking start button.
+// Kitty jumps with mouse click, UP or SPACEBAR keyboard input. 
+start.addEventListener("click", function () {
+    gameLogic();
+
+    // Add small delay so game does not start immediately.
+    setTimeout(function(){ 
+        gameStart = 1;
+    }, 1);
+});
 document.addEventListener("keydown", function (e) {
     if (e.keyCode === 32 || e.keyCode === 38) {
         jump();
@@ -31,10 +41,10 @@ document.addEventListener("keydown", function (e) {
         gameLogic();
     }
 });
-
-// Start game with START button click.
-start.addEventListener("click", function () {
-    gameLogic();
+document.addEventListener("click", function () {
+    if (gameStart === 1) {
+        jump();
+    }
 });
 
 // Randomize pepper speed.
@@ -58,10 +68,10 @@ const pepperSpeed = function () {
 const gameLogic = function () {
     clearInterval(interval);
 
+    const kittyTop = parseInt(window.getComputedStyle(kitty).getPropertyValue("top"));
+    const pepperLeft = parseInt(window.getComputedStyle(pepper).getPropertyValue("left"));
     pepper.style.animation = "pepper 0.85s infinite linear";
     start.style.display = "none";
-    let kittyTop = parseInt(window.getComputedStyle(kitty).getPropertyValue("top"));
-    let pepperLeft = parseInt(window.getComputedStyle(pepper).getPropertyValue("left"));
     kitty.style.webkitAnimationPlayState = "running";
     if (pepperLeft < 20 && pepperLeft > -20) {
         if (kittyTop >= 130) {
