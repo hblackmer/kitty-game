@@ -8,6 +8,13 @@ let highScore = 0;
 let randomizeSpeed = 0;
 let interval = 0;
 
+// Prevent keyboard scrolling in user's browser.
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
+
 // Game paused until START button is clicked or ENTER keyboard input.
 pepper.style.webkitAnimationPlayState = "paused";
 kitty.style.webkitAnimationPlayState = "paused";
