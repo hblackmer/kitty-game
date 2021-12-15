@@ -23,6 +23,28 @@ function jump() {
     }
 }
 
+function right() {
+
+    var leftVal =  parseInt(window.getComputedStyle(kitty).getPropertyValue("left"))
+    if(leftVal >= 500){
+        kitty.style.left = 500
+    }else{
+    kitty.style.left = (leftVal + 30) + "px";
+    }
+  }
+  
+  function left() {
+  
+    var leftVal =  parseInt(window.getComputedStyle(kitty).getPropertyValue("left"))
+    if(leftVal <= 20){
+        kitty.style.left = 0
+    }else{
+        kitty.style.left = (leftVal - 30) + "px";
+    }
+  
+  }
+  
+
 // Start game with ENTER keyboard input or by clicking start button.
 // Kitty jumps with mouse click, UP or SPACEBAR keyboard input. 
 start.addEventListener("click", function () {
@@ -40,6 +62,12 @@ document.addEventListener("keydown", function (e) {
     if (e.keyCode == 13) {
         gameLogic();
     }
+    if (e.keyCode === 37) {
+        left()
+    }
+    if (e.keyCode === 39) {
+        right()
+      }
 });
 document.addEventListener("click", function () {
     if (gameStart === 1) {
@@ -69,18 +97,23 @@ const gameLogic = function () {
     clearInterval(interval);
 
     const kittyTop = parseInt(window.getComputedStyle(kitty).getPropertyValue("top"));
+    const pepperTop = parseInt(window.getComputedStyle(pepper).getPropertyValue("top"));
+    const kittyLeft = parseInt(window.getComputedStyle(kitty).getPropertyValue("left"));
     const pepperLeft = parseInt(window.getComputedStyle(pepper).getPropertyValue("left"));
     pepper.style.animation = "pepper 0.85s infinite linear";
     start.style.display = "none";
     kitty.style.webkitAnimationPlayState = "running";
-    if (pepperLeft < 20 && pepperLeft > -20) {
-        if (kittyTop >= 130) {
+    if (kittyLeft - pepperLeft < 20 && kittyLeft - pepperLeft > -20) {
+        if (kittyTop >=130) {
             pepper.style.animation = "none";
             counter = 0;
             pepper.style.animation = "pepper 0.85s infinite linear";
+            pepperSpeed();
         }
         // Randomize next pepper speed.
-        pepperSpeed();
+        if(pepperLeft == 0){
+            pepperSpeed();
+        }
     } else {
         counter++;
         let score = Math.floor(counter / 100);

@@ -45,6 +45,7 @@ body {
    font-size: 50px;
    top: 190px;
    color: grey;
+   left:0px;
 }
 .animate{
    animation: jump 0.3s linear;
@@ -54,6 +55,19 @@ body {
    30%{top: 100px;}
    70%{top: 100px;}
    100%{top: 150px;}
+}
+
+.right {
+   animation: right 500ms;
+ }
+
+@keyframes right {
+0% {
+   left: 0px;
+}
+100% {
+   left: 30px;
+}
 }
 
 /* Pepper */
